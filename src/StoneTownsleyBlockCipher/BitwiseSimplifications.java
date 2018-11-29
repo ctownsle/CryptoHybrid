@@ -38,4 +38,8 @@ public class BitwiseSimplifications {
         }
         return byterinos;
     }
+
+    public String bytesToMessage(final byte [] message){
+        return Arrays.toString(message);
+    }
 }

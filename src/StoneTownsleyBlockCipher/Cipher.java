@@ -36,7 +36,7 @@ public class Cipher {
             System.arraycopy(by, 0, finalArray, counter * 8 - 8, by.length);
             counter++;
         }
-
+        System.out.println(b.bytesToMessage(finalArray));
         return finalArray;
     }
 
@@ -78,18 +78,9 @@ public class Cipher {
         byte [] key64B = new byte[8];
 
         System.arraycopy(res, 26, key64B, 0, key64B.length);
-        long value = 0;
-        for (int i = 0; i < key64B.length; i++) {
-            value += ((long) key64B[i] & 0xffL) << (8 * i);
-        }
 
         return key64B;
-        //return value;
     }
 
-    private byte [] longToBytes(long x){
-        ByteBuffer buffer = ByteBuffer.allocate(Long.BYTES);
-        buffer.putLong(x);
-        return buffer.array();
-    }
+
 }

@@ -3,6 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="8bf6a82e-14ad-4423-aa0c-47df40112dac" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" afterPath="$PROJECT_DIR$/src/Main.java" />
+      <change beforePath="$PROJECT_DIR$/src/StoneTownsleyBlockCipher/BitwiseSimplifications.java" afterPath="$PROJECT_DIR$/src/StoneTownsleyBlockCipher/BitwiseSimplifications.java" />
+      <change beforePath="$PROJECT_DIR$/src/StoneTownsleyBlockCipher/Cipher.java" afterPath="$PROJECT_DIR$/src/StoneTownsleyBlockCipher/Cipher.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -17,8 +20,8 @@
       <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="396">
-              <caret line="22" column="0" lean-forward="false" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
+            <state relative-caret-position="306">
+              <caret line="17" column="1" lean-forward="true" selection-start-line="17" selection-start-column="1" selection-end-line="17" selection-end-column="1" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -59,10 +62,12 @@
       <file leaf-file-name="BitwiseSimplifications.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/StoneTownsleyBlockCipher/BitwiseSimplifications.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="311">
-              <caret line="34" column="21" lean-forward="false" selection-start-line="34" selection-start-column="21" selection-end-line="34" selection-end-column="21" />
+            <state relative-caret-position="455">
+              <caret line="42" column="40" lean-forward="true" selection-start-line="42" selection-start-column="40" selection-end-line="42" selection-end-column="40" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#1363#1364#0" expanded="true" />
+                <element signature="e#1410#1411#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -71,8 +76,8 @@
       <file leaf-file-name="Cipher.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/StoneTownsleyBlockCipher/Cipher.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="284">
-              <caret line="51" column="35" lean-forward="false" selection-start-line="51" selection-start-column="35" selection-end-line="51" selection-end-column="35" />
+            <state relative-caret-position="306">
+              <caret line="38" column="57" lean-forward="false" selection-start-line="38" selection-start-column="57" selection-end-line="38" selection-end-column="57" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#260#261#0" expanded="true" />
@@ -126,8 +131,8 @@
         <option value="$PROJECT_DIR$/src/RSA/Bob.java" />
         <option value="$PROJECT_DIR$/src/RSA/RSA.java" />
         <option value="$PROJECT_DIR$/src/RSA/Alice.java" />
-        <option value="$PROJECT_DIR$/src/Main.java" />
         <option value="$PROJECT_DIR$/src/StoneTownsleyBlockCipher/BitwiseSimplifications.java" />
+        <option value="$PROJECT_DIR$/src/Main.java" />
         <option value="$PROJECT_DIR$/src/StoneTownsleyBlockCipher/Cipher.java" />
       </list>
     </option>
@@ -346,7 +351,14 @@
       <option name="project" value="LOCAL" />
       <updated>1543509828516</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Add symmetric block">
+      <created>1543509834234</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1543509834234</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -433,6 +445,8 @@
           <caret line="24" column="43" lean-forward="true" selection-start-line="24" selection-start-column="43" selection-end-line="24" selection-end-column="43" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#1363#1364#0" expanded="true" />
+            <element signature="e#1410#1411#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -892,18 +906,20 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/StoneTownsleyBlockCipher/BitwiseSimplifications.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="311">
-          <caret line="34" column="21" lean-forward="false" selection-start-line="34" selection-start-column="21" selection-end-line="34" selection-end-column="21" />
+        <state relative-caret-position="455">
+          <caret line="42" column="40" lean-forward="true" selection-start-line="42" selection-start-column="40" selection-end-line="42" selection-end-column="40" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#1363#1364#0" expanded="true" />
+            <element signature="e#1410#1411#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="396">
-          <caret line="22" column="0" lean-forward="false" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
+        <state relative-caret-position="306">
+          <caret line="17" column="1" lean-forward="true" selection-start-line="17" selection-start-column="1" selection-end-line="17" selection-end-column="1" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -912,8 +928,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/StoneTownsleyBlockCipher/Cipher.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="284">
-          <caret line="51" column="35" lean-forward="false" selection-start-line="51" selection-start-column="35" selection-end-line="51" selection-end-column="35" />
+        <state relative-caret-position="306">
+          <caret line="38" column="57" lean-forward="false" selection-start-line="38" selection-start-column="57" selection-end-line="38" selection-end-column="57" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#260#261#0" expanded="true" />
