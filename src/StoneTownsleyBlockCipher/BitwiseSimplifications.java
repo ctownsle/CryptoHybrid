@@ -40,6 +40,6 @@ public class BitwiseSimplifications {
     }
 
     public String bytesToMessage(final byte [] message){
-        return Arrays.toString(message);
+        return new String(message);
     }
 }
