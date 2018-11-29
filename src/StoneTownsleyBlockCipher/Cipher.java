@@ -17,31 +17,22 @@ public class Cipher {
 
     public byte[] encrypt(final String message, final BigInteger rsaKey, final BigInteger rsaE){
         byte [] yaYEET = message.getBytes();
-        long symKey = generateKey(rsaKey, rsaE);
+        byte [] symKey = generateKey(rsaKey, rsaE);
         ArrayList<byte []> yes = b.splitBytes(yaYEET);
         int counter = 1;
-        int counter2 = 0;
+        byte [] finalArray = new byte[8 * yes.size()];
         for (byte [] by: yes) {
             for (int i = 0; i < 10; i++) { // ten rounds of computations
-                by[0] = b.leftRotate(by[0], 2);
-                by[1] = b.leftRotate(by[1], 3);
-                by[2] = b.rightRotate(by[2], 4);
-                by[3] = b.rightRotate(by[3], 2);
-                by[4] = b.rightRotate(by[4], 2);
-                by[6] = b.rightRotate(by[6], 5);
-                by[5] = b.leftRotate(by[5], 1);
-                by[7] = b.leftRotate(by[7], 4);
+                by[0] = (byte) (b.leftRotate(by[0], 2) ^ symKey[0]);
+                by[1] = (byte) (b.leftRotate(by[1], 3) ^ symKey[1]);
+                by[2] = (byte)(b.rightRotate(by[2], 4) ^ symKey[2]);
+                by[3] = (byte) (b.rightRotate(by[3], 2) ^ symKey[3]);
+                by[4] = (byte) (b.rightRotate(by[4], 2) ^ symKey[4]);
+                by[6] = (byte) (b.rightRotate(by[6], 5) ^ symKey[6]);
+                by[5] = (byte) (b.leftRotate(by[5], 1) ^ symKey[5]);
+                by[7] = (byte) (b.leftRotate(by[7], 4) ^ symKey[7]);
             }
-            long messageValue = 0;
-            for (int i = 0; i < by.length; i++) {
-                messageValue += ((long) by[i] & 0xffL) << (8 * i);
-            }
-            long res = messageValue ^ symKey;
-            yes.set(counter2, longToBytes(res)); //longToBytes(res);
-            counter2++;
-        }
-        byte [] finalArray = new byte[8 * yes.size()];
-        for (byte[] by: yes) {
+
             System.arraycopy(by, 0, finalArray, counter * 8 - 8, by.length);
             counter++;
         }
@@ -51,39 +42,36 @@ public class Cipher {
 
     public byte[] decrypt(final byte[] message, final BigInteger rsaKey, final BigInteger rsaE){
         ArrayList<byte[]> bytes = b.splitBytes(message);
-        long symmKey = generateKey(rsaKey, rsaE);
-
-        int counter = 0;
-        for (byte [] by: bytes) {
-            long messageValue = 0;
-            for (int i = 0; i < by.length; i++) {
-                messageValue += ((long) message[i] & 0xffL) << (8 * i);
-            }
-            long res = messageValue ^ symmKey;
-            byte [] byteRes = longToBytes(res);
-            bytes.set(counter, byteRes);
-            counter++;
-            for (int i = 0; i < 10; i++) {
-                by[0] = b.rightRotate(by[0], 2);
-                by[1] = b.rightRotate(by[1], 3);
-                by[2] = b.leftRotate(by[2], 4);
-                by[3] = b.leftRotate(by[3], 2);
-                by[4] = b.leftRotate(by[4], 2);
-                by[6] = b.leftRotate(by[6], 5);
-                by[5] = b.rightRotate(by[5], 1);
-                by[7] = b.rightRotate(by[7], 4);
-            }
-        }
+        byte[] symmKey = generateKey(rsaKey, rsaE);
         byte [] finalArray = new byte[8 * bytes.size()];
         int counter2 = 1;
-        for (byte[] by: bytes) {
+        for (byte [] by: bytes) {
+            for (int i = 0; i < 10; i++) {
+                by[0] ^= symmKey[0];
+                by[0] = b.rightRotate(by[0], 2);
+                by[1] ^= symmKey[1];
+                by[1] = b.rightRotate(by[1], 3);
+                by[2] ^= symmKey[2];
+                by[2] = b.leftRotate(by[2], 4);
+                by[3] ^= symmKey[3];
+                by[3] = b.leftRotate(by[3], 2);
+                by[4] ^= symmKey[4];
+                by[4] = b.leftRotate(by[4], 2);
+                by[6] ^= symmKey[6];
+                by[6] = b.leftRotate(by[6], 5);
+                by[5] ^= symmKey[5];
+                by[5] = b.rightRotate(by[5], 1);
+                by[7] ^= symmKey[7];
+                by[7] = b.rightRotate(by[7], 4);
+            }
+
             System.arraycopy(by, 0, finalArray, counter2 * 8 - 8, by.length);
             counter2++;
         }
         return finalArray;
     }
 
-    private long generateKey(final BigInteger rsaKey, final BigInteger rsaE){
+    private byte[] generateKey(final BigInteger rsaKey, final BigInteger rsaE){
         Random r = new Random();
         //BigInteger d = BigInteger.probablePrime(256, r);
         byte [] res = rsaE.modPow(rsaE, rsaKey).toByteArray();
@@ -94,13 +82,14 @@ public class Cipher {
         for (int i = 0; i < key64B.length; i++) {
             value += ((long) key64B[i] & 0xffL) << (8 * i);
         }
-        return value;
+
+        return key64B;
+        //return value;
     }
 
     private byte [] longToBytes(long x){
         ByteBuffer buffer = ByteBuffer.allocate(Long.BYTES);
         buffer.putLong(x);
-        byte [] arr = buffer.array();
-        return arr;
+        return buffer.array();
     }
 }
