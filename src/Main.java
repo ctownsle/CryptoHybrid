@@ -13,6 +13,6 @@ public class Main {
         RSA rsa = a.getRSAinstance();
         BitwiseSimplifications b = new BitwiseSimplifications();
         Cipher c = new Cipher();
-        System.out.println(b.bytesToMessage(c.decrypt(c.encrypt("Hello there, it appears that my name jeff", rsa.getN(), rsa.getE()), rsa.getN(), rsa.getE())));
+        System.out.println(b.bytesToMessage(c.decrypt(c.encrypt("Hello there, it appears that my name jeff", rsa.getN(), rsa.getE()), rsa.getN(), rsa.getE()), false));
     }
 }

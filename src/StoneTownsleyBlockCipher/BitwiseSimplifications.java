@@ -6,6 +6,7 @@ import java.util.Arrays;
 public class BitwiseSimplifications {
 
     static final int BITSIZE = Byte.SIZE;
+    private static int breaklength;
     /*
     n is the number being rotated and d is the the number of bits to rotate by
      */
@@ -35,11 +36,18 @@ public class BitwiseSimplifications {
                 byte [] temp = Arrays.copyOfRange(bytes, ((i * 8) - 8), i * 8);
                 byterinos.add(temp);
             }
+
+            breaklength = bytes.length;
         }
         return byterinos;
     }
 
-    public String bytesToMessage(final byte [] message){
-        return new String(message);
+    public String bytesToMessage(final byte [] message, final boolean messageFlag) {
+        if (breaklength == 0 || messageFlag)
+            return new String(message);
+        else {
+            byte[] res = Arrays.copyOfRange(message, 0, breaklength);
+            return new String(res);
+        }
     }
 }

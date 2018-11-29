@@ -35,7 +35,7 @@ public class Cipher {
             System.arraycopy(by, 0, finalArray, counter * 8 - 8, by.length);
             counter++;
         }
-        System.out.println(b.bytesToMessage(finalArray));
+        System.out.println(b.bytesToMessage(finalArray, true));
         return finalArray;
     }
 
