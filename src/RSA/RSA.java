@@ -18,13 +18,15 @@ public class RSA {
         I'll leave it at this for now
     */
     public RSA(final BigInteger e, final BigInteger N){
+        this.e = e;
+        this.N = N;
+    }
 
+    public BigInteger getE() {
+        return e;
+    }
 
-//        N = p.multiply(q);
-
-        // calculate phi
-//        phi = p.subtract(BigInteger.ONE).multiply(q.subtract(BigInteger.ONE));
-
-       // e = BigInteger.probablePrime(bitlength/2, r);
+    public BigInteger getN() {
+        return N;
     }
 }
