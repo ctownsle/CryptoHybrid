@@ -8,15 +8,15 @@ import java.util.Random;
 public class Cipher {
 
     private BitwiseSimplifications b;
-    private byte [] ciphertext;
-
-    public Cipher(){
+    private String ciphertext;
+    private byte [] symKey;
+    public Cipher(final BigInteger rsaKey, final BigInteger rsaE){
         b = new BitwiseSimplifications();
+        symKey = generateKey(rsaKey, rsaE);
     }
 
-    public byte[] encrypt(final String message, final BigInteger rsaKey, final BigInteger rsaE){
+    public byte[] encrypt(final String message){
         byte [] yaYEET = message.getBytes();
-        byte [] symKey = generateKey(rsaKey, rsaE);
         ArrayList<byte []> yes = b.splitBytes(yaYEET);
         int counter = 1;
         byte [] finalArray = new byte[8 * yes.size()];
@@ -35,32 +35,32 @@ public class Cipher {
             System.arraycopy(by, 0, finalArray, counter * 8 - 8, by.length);
             counter++;
         }
+        ciphertext = b.bytesToMessage(finalArray, true);
         System.out.println(b.bytesToMessage(finalArray, true));
         return finalArray;
     }
 
-    public byte[] decrypt(final byte[] message, final BigInteger rsaKey, final BigInteger rsaE){
+    public byte[] decrypt(final byte[] message){
         ArrayList<byte[]> bytes = b.splitBytes(message);
-        byte[] symmKey = generateKey(rsaKey, rsaE);
         byte [] finalArray = new byte[8 * bytes.size()];
         int counter2 = 1;
         for (byte [] by: bytes) {
             for (int i = 0; i < 10; i++) {
-                by[0] ^= symmKey[0];
+                by[0] ^= symKey[0];
                 by[0] = b.rightRotate(by[0], 2);
-                by[1] ^= symmKey[1];
+                by[1] ^= symKey[1];
                 by[1] = b.rightRotate(by[1], 3);
-                by[2] ^= symmKey[2];
+                by[2] ^= symKey[2];
                 by[2] = b.leftRotate(by[2], 4);
-                by[3] ^= symmKey[3];
+                by[3] ^= symKey[3];
                 by[3] = b.leftRotate(by[3], 2);
-                by[4] ^= symmKey[4];
+                by[4] ^= symKey[4];
                 by[4] = b.leftRotate(by[4], 2);
-                by[6] ^= symmKey[6];
+                by[6] ^= symKey[6];
                 by[6] = b.leftRotate(by[6], 5);
-                by[5] ^= symmKey[5];
+                by[5] ^= symKey[5];
                 by[5] = b.rightRotate(by[5], 1);
-                by[7] ^= symmKey[7];
+                by[7] ^= symKey[7];
                 by[7] = b.rightRotate(by[7], 4);
             }
 
@@ -72,8 +72,8 @@ public class Cipher {
 
     private byte[] generateKey(final BigInteger rsaKey, final BigInteger rsaE){
         Random r = new Random();
-        //BigInteger d = BigInteger.probablePrime(256, r);
-        byte [] res = rsaE.modPow(rsaE, rsaKey).toByteArray();
+        BigInteger d = BigInteger.probablePrime(256, r);
+        byte [] res = d.modPow(rsaE, rsaKey).toByteArray();
         byte [] key64B = new byte[8];
 
         System.arraycopy(res, 26, key64B, 0, key64B.length);
@@ -81,5 +81,8 @@ public class Cipher {
         return key64B;
     }
 
+    public String getCiphertext() {
+        return ciphertext;
+    }
 
 }
