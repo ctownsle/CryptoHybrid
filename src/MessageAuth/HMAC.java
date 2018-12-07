@@ -15,15 +15,14 @@ public class HMAC {
     private Bob b;
     private static int blockSize = 32;
 
-    public HMAC(final Alice a, final Bob b){
-        this.a = a;
-        this.b = b;
+    public HMAC(){
+
     }
 
-    public byte[] auth(final String cipherText, final byte [] sharedSecret) throws NoSuchAlgorithmException{
+    public byte[] auth(final byte [] cipherText, final byte [] sharedSecret) throws NoSuchAlgorithmException{
         byte [] fixed = sharedSecret;
         if (sharedSecret.length > blockSize){
-            hash(cipherText);
+            hash(new String(cipherText));
         } else {
             fixed = Arrays.copyOfRange(sharedSecret, 0, blockSize);
         }
@@ -32,13 +31,12 @@ public class HMAC {
         BigInteger iKeyPad = new BigInteger(fixed).xor(BigInteger.valueOf(0x36 * blockSize));
 
 
-        byte [] mesBytes = cipherText.getBytes();
         byte [] iKeyBytes = iKeyPad.toByteArray();
         byte [] oKeyBytes = oKeyPad.toByteArray();
-        int length = mesBytes.length + iKeyBytes.length;
+        int length = cipherText.length + iKeyBytes.length;
         byte [] resA = new byte[length];
         System.arraycopy(iKeyBytes, 0, resA, 0, iKeyBytes.length);
-        System.arraycopy(mesBytes, 0, resA, iKeyBytes.length, mesBytes.length);
+        System.arraycopy(cipherText, 0, resA, iKeyBytes.length, cipherText.length);
         byte [] hash1 = hash(new String(resA));
         int length2 = oKeyBytes.length + hash1.length;
         byte [] finalH = new byte[length2];
