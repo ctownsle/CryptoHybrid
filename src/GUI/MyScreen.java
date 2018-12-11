@@ -16,7 +16,6 @@ public class MyScreen {
     private JList<String> bobPaneMessages, alicePaneMessages, innerworkingTexts;
     private DefaultListModel<String> bobPaneLM, alicePaneLM, innerworkingLM;
     private JTextField aliceField, bobField;
-    //private JButton generateAddresses;
     private MyScreen myScreen;
     private JPanel contentPane;
     private ReentrantLock lock;
@@ -49,7 +48,7 @@ public class MyScreen {
         alicePaneMessages = new JList<>();
         alicePaneMessages.setModel(alicePaneLM);
         alicePanel.setViewportView(alicePaneMessages);
-        alicePanel.setSize(frame.getWidth()/3, 600);
+        alicePanel.setSize(frame.getWidth()/3, 800);
         alicePanel.setLocation(0, 100);
         contentPane.add(alicePanel);
 
@@ -58,7 +57,7 @@ public class MyScreen {
         bobPaneMessages = new JList<>();
         bobPaneMessages.setModel(bobPaneLM);
         bobPanel.setViewportView(bobPaneMessages);
-        bobPanel.setSize(frame.getWidth()/3, 600);
+        bobPanel.setSize(frame.getWidth()/3, 800);
         bobPanel.setLocation(2 * frame.getWidth()/3, 100);
         contentPane.add(bobPanel);
 

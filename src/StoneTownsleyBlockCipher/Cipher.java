@@ -170,8 +170,4 @@ public class Cipher {
         return key64B;
     }
 
-    public byte[] getCiphertext() {
-        return ciphertext;
-    }
-
 }
