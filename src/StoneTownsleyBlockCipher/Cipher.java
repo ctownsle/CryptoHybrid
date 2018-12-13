@@ -33,19 +33,19 @@ public class Cipher {
     public byte[] encrypt(final String message) throws InterruptedException{
         screen.addToListModel("BEGINNING ENCRYPTION");
         Thread.sleep(1000);
-        byte [] yaYEET = message.getBytes();
+        byte [] mesBytes = message.getBytes();
         screen.addToListModel("CONVERTING MESSAGE TO 64 BIT BLOCKS (8 BYTE BLOCKS): ");
-        ArrayList<byte []> yes = b.splitBytes(yaYEET);
+        ArrayList<byte []> mesBlocks = b.splitBytes(mesBytes);
         Thread.sleep(2000);
-        for (byte [] b: yes) {
+        for (byte [] b: mesBlocks) {
             screen.addToListModel(Arrays.toString(b));
         }
         Thread.sleep(2000);
         int counter = 1;
-        byte [] finalArray = new byte[8 * yes.size()];
+        byte [] finalArray = new byte[8 * mesBlocks.size()];
         screen.addToListModel("BEGINNING BLOCK CIPHER");
         screen.addToListModel("EACH BLOCK GOES THROUGH 6 ROUNDS");
-        for (byte [] by: yes) {
+        for (byte [] by: mesBlocks) {
             screen.addToListModel("BEGINNING MESSAGE BLOCK: " + counter);
             Thread.sleep(1000);
             for (int i = 0; i < 6; i++) { // ten rounds of computations
@@ -72,7 +72,6 @@ public class Cipher {
             sb.append(hex);
         }
         screen.addToListModel("RESULTING CIPHERTEXT: " + sb.toString());
-        //System.out.println(sb.toString());
         StringBuilder sbA = new StringBuilder();
         byte [] hashA = null;
         try {

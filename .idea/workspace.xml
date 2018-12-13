@@ -3,15 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="8bf6a82e-14ad-4423-aa0c-47df40112dac" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/src/GUI/Controller.java" afterPath="$PROJECT_DIR$/src/GUI/Controller.java" />
-      <change beforePath="$PROJECT_DIR$/src/GUI/EncryptionDecryptionController.java" afterPath="$PROJECT_DIR$/src/GUI/EncryptionDecryptionController.java" />
-      <change beforePath="$PROJECT_DIR$/src/GUI/MyScreen.java" afterPath="$PROJECT_DIR$/src/GUI/MyScreen.java" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" afterPath="$PROJECT_DIR$/src/Main.java" />
-      <change beforePath="$PROJECT_DIR$/src/MessageAuth/HMAC.java" afterPath="$PROJECT_DIR$/src/MessageAuth/HMAC.java" />
-      <change beforePath="$PROJECT_DIR$/src/RSA/Alice.java" afterPath="$PROJECT_DIR$/src/RSA/Alice.java" />
-      <change beforePath="$PROJECT_DIR$/src/RSA/Bob.java" afterPath="$PROJECT_DIR$/src/RSA/Bob.java" />
-      <change beforePath="$PROJECT_DIR$/src/RSA/RSA.java" afterPath="$PROJECT_DIR$/src/RSA/RSA.java" />
-      <change beforePath="$PROJECT_DIR$/src/StoneTownsleyBlockCipher/BitwiseSimplifications.java" afterPath="$PROJECT_DIR$/src/StoneTownsleyBlockCipher/BitwiseSimplifications.java" />
       <change beforePath="$PROJECT_DIR$/src/StoneTownsleyBlockCipher/Cipher.java" afterPath="$PROJECT_DIR$/src/StoneTownsleyBlockCipher/Cipher.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -75,11 +66,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Cipher.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Cipher.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/StoneTownsleyBlockCipher/Cipher.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="15" column="16" lean-forward="false" selection-start-line="15" selection-start-column="16" selection-end-line="15" selection-end-column="16" />
+            <state relative-caret-position="18">
+              <caret line="89" column="0" lean-forward="false" selection-start-line="89" selection-start-column="0" selection-end-line="89" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -113,7 +104,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MyScreen.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="MyScreen.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/GUI/MyScreen.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="0">
@@ -193,12 +184,12 @@
         <option value="$PROJECT_DIR$/src/Main.java" />
         <option value="$PROJECT_DIR$/src/RSA/Alice.java" />
         <option value="$PROJECT_DIR$/src/StoneTownsleyBlockCipher/BitwiseSimplifications.java" />
-        <option value="$PROJECT_DIR$/src/StoneTownsleyBlockCipher/Cipher.java" />
         <option value="$PROJECT_DIR$/src/MessageAuth/HMAC.java" />
         <option value="$PROJECT_DIR$/src/RSA/Bob.java" />
         <option value="$PROJECT_DIR$/src/GUI/EncryptionDecryptionController.java" />
         <option value="$PROJECT_DIR$/src/GUI/Controller.java" />
         <option value="$PROJECT_DIR$/src/GUI/MyScreen.java" />
+        <option value="$PROJECT_DIR$/src/StoneTownsleyBlockCipher/Cipher.java" />
       </list>
     </option>
   </component>
@@ -502,7 +493,14 @@
       <option name="project" value="LOCAL" />
       <updated>1544558002460</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Code Cleanup">
+      <created>1544660174583</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1544660174584</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -546,7 +544,8 @@
     <MESSAGE value="Remove trailing bytes" />
     <MESSAGE value="add HMAC" />
     <MESSAGE value="Finish GUI" />
-    <option name="LAST_COMMIT_MESSAGE" value="Finish GUI" />
+    <MESSAGE value="Code Cleanup" />
+    <option name="LAST_COMMIT_MESSAGE" value="Code Cleanup" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1039,16 +1038,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/StoneTownsleyBlockCipher/Cipher.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="15" column="16" lean-forward="false" selection-start-line="15" selection-start-column="16" selection-end-line="15" selection-end-column="16" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/MessageAuth/HMAC.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="126">
@@ -1105,6 +1094,16 @@
             <element signature="e#5331#5332#0" expanded="true" />
             <element signature="e#5361#5362#0" expanded="true" />
             <element signature="e#5387#5388#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/StoneTownsleyBlockCipher/Cipher.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="18">
+          <caret line="89" column="0" lean-forward="false" selection-start-line="89" selection-start-column="0" selection-end-line="89" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
