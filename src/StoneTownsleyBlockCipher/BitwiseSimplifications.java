@@ -4,12 +4,12 @@ import java.util.ArrayList;
 import java.util.Arrays;
 
 public class BitwiseSimplifications {
-
+    /**
+     * Functions that handle bitwise manipulations for secure block cipher operations
+     */
     static final int BITSIZE = Byte.SIZE;
     private static int breaklength;
-    /*
-    n is the number being rotated and d is the the number of bits to rotate by
-     */
+
     public BitwiseSimplifications(){}
 
     public byte leftRotate(byte n, int d){

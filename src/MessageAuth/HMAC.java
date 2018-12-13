@@ -10,9 +10,9 @@ import java.security.NoSuchAlgorithmException;
 import java.util.Arrays;
 
 public class HMAC {
-
-    private Alice a;
-    private Bob b;
+    /**
+     * See @Main
+     */
     private static int blockSize = 32;
 
     public HMAC(){

@@ -12,6 +12,10 @@ import java.util.Random;
 
 public class Cipher {
 
+    /**
+     * See @Main
+     */
+
     private BitwiseSimplifications b;
     private byte[] ciphertext;
     private byte [] symKey;

@@ -6,6 +6,9 @@ import StoneTownsleyBlockCipher.Cipher;
 import java.math.BigInteger;
 
 public class EncryptionDecryptionController implements Runnable {
+    /**
+     * See @Main
+     */
     private MyScreen screen;
     private BigInteger E, N;
     private String message;

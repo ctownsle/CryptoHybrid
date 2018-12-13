@@ -11,6 +11,10 @@ import java.util.concurrent.locks.ReentrantLock;
 
 public class MyScreen {
 
+    /**
+     * See @Main
+     */
+
     private JScrollPane innerworkings, bobPanel, alicePanel;
     private JLabel bobLabel, innerstuffLabel, aliceLabel;
     private JList<String> bobPaneMessages, alicePaneMessages, innerworkingTexts;
@@ -86,11 +90,6 @@ public class MyScreen {
         bobField.setLocation(bobPanel.getLocation().x, bobPanel.getHeight() + 100);
         contentPane.add(bobField);
 
-       /* generateAddresses = new JButton("Generate Public Keys");
-        generateAddresses.setSize(200, 50);
-        generateAddresses.setLocation(innerstuffLabel.getLocation().x - 120, innerworkings.getHeight() + 100);
-        contentPane.add(generateAddresses);
-*/
         frame.setContentPane(contentPane);
         frame.setLocationByPlatform(true);
         frame.setVisible(true);
@@ -118,14 +117,6 @@ public class MyScreen {
 
         Thread helper = new Thread(new Controller(myScreen));
         helper.start();
-
-      /*  generateAddresses.addActionListener(new AbstractAction() {
-            @Override
-            public void actionPerformed(ActionEvent actionEvent){
-                Thread helper = new Thread(new Controller(myScreen));
-                helper.start();
-            }
-        });*/
 
     }
 
@@ -171,25 +162,4 @@ public class MyScreen {
         this.b = b;
     }
 
-    public Bob getB() {
-        return b;
-    }
-
-    public Alice getA() {
-        return a;
-    }
-
-    /* public void run(boolean flag){
-//        innerworkingTexts.setModel(innerworkingLM);
-//        innerworkings.setViewportView(innerworkingTexts);
-//        //Thread.sleep(300);
-        if(flag) {
-            innerworkingLM.addElement("GENERATING ALICE PUBLIC KEY");
-            a = new Alice();
-        }
-        else {
-            innerworkingLM.addElement("GENERATING BOB PUBLIC KEY");
-            b = new Bob();
-        }
-    }*/
 }

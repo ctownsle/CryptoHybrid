@@ -5,6 +5,10 @@ import java.util.Random;
 
 public class Bob {
 
+    /**
+     * See @Main
+     */
+
     private Random r;
     private BigInteger p, q, N, phi, e;
     private static int bitlength = 2056;

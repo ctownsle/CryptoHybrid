@@ -1,36 +1,22 @@
 import GUI.MyScreen;
 
-import java.security.NoSuchAlgorithmException;
 
+/**
+ * @RSA holds a public N and e to generate a public address for @Alice and @Bob
+ * @HMAC Uses the algorithm described in RFC 2104 to generate a boolean which determines whether or not the message
+ * is verified or not
+ * @Cipher handles symmetric encryption, decryption and HMAC authentication
+ * @Alice essentially just holds a public address generated from @RSA
+ * @Bob essentially just holds a public address generated from @RSA
+ * @MyScreen creates a screen that passes messages between two clients. Creates
+ * threads to handle any and all calculations by passing information to either @EncryptionDecryptionController
+ * to handle encryption and decryption calculations or @Controller to generate public addresses on startup.
+ */
 
 public class Main {
 
-    public static void main(String [] args) throws NoSuchAlgorithmException {
-        //TODO: stuff
+    public static void main(String [] args) {
         MyScreen jeff = new MyScreen();
 
-       /* Alice a  = new Alice();
-        HMAC h = new HMAC(a, new Bob());
-
-        RSA rsa = a.getRSAinstance();
-        BitwiseSimplifications b = new BitwiseSimplifications();
-        Cipher c = new Cipher(rsa.getN(), rsa.getE());
-        System.out.println(b.bytesToMessage(c.decrypt(c.encrypt("Hello there, it appears that my name jeff")), false));
-        byte [] hashA = h.auth(c.getCiphertext(), "mellamoefe".getBytes());
-        byte [] hashB = h.auth(c.getCiphertext(), "mellamoefe".getBytes());
-        StringBuilder sbA = new StringBuilder();
-        for(byte foo : hashA){
-            String hex = String.format("%02x", foo);
-            sbA.append(hex);
-        }
-
-        StringBuilder sbB = new StringBuilder();
-        for(byte foo : hashB){
-            String hex = String.format("%02x", foo);
-            sbB.append(hex);
-        }
-        System.out.println(sbA.toString());
-        System.out.println(sbB.toString());
-    }*/
     }
 }
